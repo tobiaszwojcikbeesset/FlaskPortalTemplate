@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>{% block title %}MRT Studio{% endblock %}</title>
+    {% endblock %}
+</head>
+<body>
+    <header>
+      {% include "base/header.html" %}
+      {% block header%}
+      {% endblock %}
+      <nav>{% include "base/nav.html" %}</nav>
+    </header>
+    <!-- <aside></aside> -->
+    <main>
+      {% block content%}
+      {% endblock %}
+    </main>
+    <!-- <aside></aside> -->
+    <footer>
+      {% block footer %}
+      {% endblock %}
+      {% include "base/footer.html" %}
+    </footer>
+</body>
+</html>
